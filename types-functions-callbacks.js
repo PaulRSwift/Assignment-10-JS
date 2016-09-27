@@ -146,10 +146,14 @@ console.assert(minimum(1000,-2,99,50) === -2)
 // both or neither.
 
 var justOneString = function (a, b) {
-  if (typeof a ==='string' && typeof numB === 'string') return (false)
-  else
-	  return true
-
+  if (typeof a ==='number' && typeof b === 'string')
+  	{return true}
+	else if (typeof a === 'string' && typeof b === 'number')
+	  {return true}
+	else if (typeof a ==='string' && typeof b === 'string')
+	  {return false}
+	else if (typeof a ==='number' && typeof b === 'object')
+		{return false}
   }
 
 
@@ -168,6 +172,8 @@ console.assert(justOneString(8,null) === false)
 // modify global variables, although that's not a good
 // pattern for production code.
 
+
+
 var NUMBER = 10
 
 var incrementGlobalNumber = function(){
@@ -176,6 +182,12 @@ var incrementGlobalNumber = function(){
 
 var doubleGlobalNumber = function() {
 	NUMBER = NUMBER * 2
+}
+
+var doTwice=function(numA) {
+	numA()
+	numA()
+	return NUMBER
 }
 
 doTwice(incrementGlobalNumber)
