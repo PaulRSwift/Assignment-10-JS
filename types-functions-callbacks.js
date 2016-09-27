@@ -107,7 +107,7 @@ console.assert(isNegative(-999) === true)
 // function inside your sum funciton ***
 
 var sum = function (numA, numB) {
-  if (numA > 0 || numB > 0) {return (numA + numB)}
+  if (numA > 0 && numB > 0) return (numA + numB)
   else {
 	  return null
 
@@ -125,15 +125,12 @@ console.assert(sum(5,-5) === null)
 
 var minimum = function (num1, num2,num3, num4) {
 	if (num1 < num2 && num1 < num3 && num1 < num4) {return (num1)}
-		else {
+		else if
 			(num2 < num1 && num2 < num3 && num2 < num4) {return (num2)}
-		}
-		else if {
+		else if
 			(num3 < num1 && num3 < num2 && num3 < num4) {return (num3)}
-		}
-		else if {
+		else if
 			(num4 < num1 && num4 < num2 && num4 < num3) {return (num4)}
-		}
 }
 
 console.assert(minimum(1,2,4,0) === 0)
@@ -147,6 +144,14 @@ console.assert(minimum(1000,-2,99,50) === -2)
 // Using logical operators, write a function that will
 // return true if either input is a string, but not
 // both or neither.
+
+var justOneString = function (a, b) {
+  if (typeof a ==='string' && typeof numB === 'string') return (false)
+  else
+	  return true
+
+  }
+
 
 console.assert(justOneString('a',5) === true)
 console.assert(justOneString(6,'dotron') === true)
